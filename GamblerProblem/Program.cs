@@ -7,6 +7,7 @@ namespace GamblerProblem
         static void Main(string[] args)
         {
             Gambler gambler = new Gambler();
+            gambler.GamblerInitial();
             gambler.Bet();
         }
     }

@@ -6,26 +6,31 @@ namespace GamblerProblem
 {
     class Gambler
     {
+        public void GamblerInitial()
+        {
+            const int STAKE = 100;
+            const int BET = 1;
+            Console.WriteLine("stake is =" + STAKE + " and Bet is =" + BET);
+        }
         public void Bet()
         {
-            Stack<int> stack = new Stack<int>();
-            stack.Push(100);
+            int stake = 100;
+            int bet = 1;
             Random random = new Random();
-            int player = random.Next(0,2);
-            Console.WriteLine(player);
+            int player = random.Next(0, 2);
             if (player == 0)
             {
                 Console.WriteLine("Loss game");
-                int stackPreviousValue = stack.Pop();
-                stack.Push(stackPreviousValue - 1);
+                 stake = stake - 1;
             }
             else
             {
-                Console.WriteLine("Won the game");
-                int stackPreviousValue = stack.Pop();
-                stack.Push(stackPreviousValue + 1);
+                stake = stake + 1;
+                Console.WriteLine("Win a game");
             }
-            Console.WriteLine("After Game play Stack Value is =" + stack.Peek());
+            Console.WriteLine("After bet stake is =" + stake);
+
         }
+
     }
 }
